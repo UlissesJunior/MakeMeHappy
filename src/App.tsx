@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import ButtonHappy from './components/ButtonHappy';
+import Cats from './components/Cats';
+import { Container, LogoStyle } from './styles/styles';
+import Logo from "./img/Logo_MakeMeHappy.png"
 
 function App() {
+  const [happy, setHappy] = useState(false)
+
+  const imHappy = () => {
+    setHappy(true)
+    window.scrollTo({
+      top: document.documentElement.scrollHeight - window.innerHeight,
+      behavior: 'smooth',
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Container>
+    <LogoStyle src={Logo} alt="Logo made with Vantage Font, Copyright: 'https://www.behance.net/gallery/155571841/VANTAGE-RETRO-FUNK-FREE-FONT?tracking_source=search_projects%7Cindie+fonts'" />
+    <ButtonHappy onClick={imHappy}/>
+    </Container>
+    {happy ? (<Cats/>) : (<></>)}
+    
+    </>
   );
 }
 
