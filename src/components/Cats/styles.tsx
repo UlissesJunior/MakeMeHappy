@@ -12,11 +12,8 @@ export const Container = styled.div`
 `;
 
 export const Img = styled.img`
-  min-width: 60rem;
-  min-height: 40rem;
+  width: 80vw;
+  max-width: 60rem;
+  height: auto;
   margin: 1vh;
-  @media (max-width: 1080px) {
-    width: 80vw;
-    height: auto;
-  }
 `;

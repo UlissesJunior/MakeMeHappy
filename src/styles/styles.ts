@@ -16,3 +16,29 @@ export const LogoStyle = styled.img`
   width: 60vw;
   max-width: 1020px;
 `;
+
+
+export const Mouse = styled.img`
+  position: absolute;
+  bottom: 4vh;
+  width: 32px;
+  animation: upDownAnimation 3s linear 4;
+  
+  @keyframes upDownAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-15px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+`;
